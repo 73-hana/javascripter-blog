@@ -19,3 +19,34 @@ body {
 a {
   color: inherit;
 }
+
+h2 {
+  font-size: 30px;
+  border-bottom: 5px solid black;
+  margin-bottom: 15px;
+}
+h3 {
+  font-size: 25px;
+  border-bottom: 5px dotted black;
+  margin-bottom: 15px;
+}
+h4 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+h5 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+p {
+  margin-bottom: 15px;
+}
+p:has(a) {
+  text-decoration: underline;
+}
+p:has(a):hover {
+  background-color: lightgreen;
+}
+.container:last-child {
+  margin-bottom: 0;
+}
