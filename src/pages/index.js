@@ -1,5 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
+import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 
 export async function getStaticProps({ params }) {
@@ -15,8 +16,13 @@ export async function getStaticProps({ params }) {
 
 export default function Index({ frontMatter, content }) {
   return (
-    <div className='container'>
-      <ReactMarkdown>{content}</ReactMarkdown>
-    </div>
+    <>
+      <Head>
+        <title>JavaScripterにようこそ | JavaScripter</title>
+      </Head>
+      <div className='container'>
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </div>
+    </>
   )
 }

@@ -1,9 +1,10 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
+import Head from 'next/head';
 
 export async function getStaticProps({ params }) {
-  const file = fs.readFileSync(`posts/js/neko.md`, 'utf-8');
+  const file = fs.readFileSync(`posts/js/${params.slug}.md`, 'utf-8');
   const { data, content } = matter(file);
   return {
     props: {
@@ -29,8 +30,13 @@ export async function getStaticPaths() {
 
 export default function Js({ frontMatter, content }) {
   return (
-    <div className='container'>
-      <ReactMarkdown>{content}</ReactMarkdown>
-    </div>
+    <>
+      <Head>
+        <title>{frontMatter.title} | JavaScripter</title>
+      </Head>
+      <div className='container'>
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </div>
+    </>
   )
 }

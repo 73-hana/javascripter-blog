@@ -1,5 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
+import Head from 'next/head';
 import Link from 'next/link';
 
 export function getStaticProps() {
@@ -25,6 +26,9 @@ export default function Index({ posts }) {
   console.log(posts);
   return (
     <>
+      <Head>
+        <title>JavaScriptの記事一覧 | JavaScripter</title>
+      </Head>
       <h2>JavaScript</h2>
       {posts.map(post => (
         <div key={post.slug}>
