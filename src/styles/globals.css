@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Verdana,Geneva,Tahoma,sans-serif;
 }
 
 html {
@@ -47,6 +48,33 @@ p:has(a) {
 p:has(a):hover {
   background-color: lightgreen;
 }
-.container:last-child {
+.container :last-child {
   margin-bottom: 0;
+}
+.container ul, .container ol {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+code {
+  background-color: whitesmoke;
+  color: #ff0000;
+  border: 1px solid gray;
+  padding: 0 5px;
+}
+
+pre {
+  margin-bottom: 15px;
+}
+
+pre code {
+  font-size: 16px;
+  display: block;
+  border: 5px solid black;
+  padding: 5px;
+  background-color: rgb(100, 100, 100);
+  color: white;
+  width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
